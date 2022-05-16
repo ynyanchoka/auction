@@ -1,10 +1,28 @@
 {{#partial "content"}}
     <div class="row">
-        <div class="col-md-6" id="maintitle">
-            <h1>Online Auction</h1>
-
+        <div class="col-md-6" id="main">
+            <h1 id="maintitle">Online Auction</h1>
+            <hr>
+            <img id="mainimg" src="images/auction.jpg">
         </div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <h1>Welcome Back</h1>
+            <hr>
+            <form action="#" method="POST">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control bg-transparent text-dark" id="username" name="username" aria-describedby="usernameHelp" value="" required>
+                    <div id="usernameHelp" class="form-text">Enter your username here</div>
+                </div><br>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="text" class="form-control bg-transparent text-dark" id="password" name="password" aria-describedby="passwordHelp" value="" required>
+                    <div id="passwordHelp" class="form-text">Enter your password here</div>
+                </div><br>
+                <button type="submit" class="btn" id="loginbutton">LOGIN</button><br>
+            </form>
+            <p>create a new account<a href="/signup.hbs">here</a></p>
+        </div>
     </div>
 {{/partial}}
 
