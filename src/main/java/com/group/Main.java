@@ -20,5 +20,9 @@ public class Main {
         get("/login", (request, response) -> {
             return new ModelAndView(model, "login.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/signup", (request, response) -> {
+            return new ModelAndView(model, "signup.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
