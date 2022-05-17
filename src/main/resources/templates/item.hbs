@@ -1,16 +1,21 @@
 {{#partial "content"}}
     <div class="container">
-        <h2>Modal</h2>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Check details</button>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Check details
+        </button>
 
         <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog modal-lg">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="exampleModalLabel">Couch</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                     <div class="modal-body">
-                        <div class="card flex-row"><img class="card-img-left example-card-img-responsive" width="50%" src="../images/sofa-gba054b8df_640.jpg" />
+                        <div class="card flex-row"><img class="card-img-left example-card-img-responsive" width="50%" src="./images/sofa-gba054b8df_640.jpg" />
                             <div class="card-body">
-                                <h3 class="card-title">Couch</h3>
                                 <div card text>
                                     <p>Round single sofa with solid Fabric and is entirely in one color. This design consists of grey textured fabric.</p>
                                     <p>Seller: ABC furnitures</p>
@@ -26,7 +31,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
