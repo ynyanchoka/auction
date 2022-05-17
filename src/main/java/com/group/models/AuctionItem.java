@@ -13,14 +13,13 @@ public class AuctionItem {
     private Timestamp createdAt;
 
     public AuctionItem(int createdBy, String itemName, String imageUrl,
-                       int basePrice, String description,
-                       Timestamp createdAt) {
+                       int basePrice, String description
+                      ) {
         this.createdBy = createdBy;
         this.itemName = itemName;
         this.imageUrl = imageUrl;
         this.basePrice = basePrice;
         this.description = description;
-        this.createdAt = createdAt;
     }
 
     public int getId() {

@@ -12,7 +12,7 @@ public interface IBid {
 
     List<Bids> getBidsByUserId(Connection connection, int id);
 
-    boolean updateBid(Connection connection, Bids bid);
+    boolean updateBid(Connection connection, int id);
 
     boolean deleteBid(Connection connection, int id);
 }
