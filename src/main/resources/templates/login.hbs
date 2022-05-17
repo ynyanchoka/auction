@@ -8,20 +8,33 @@
         <div class="col-md-6">
             <h1>Welcome Back</h1>
             <hr>
-            <form action="#" method="POST">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control bg-transparent text-dark" id="username" name="username" aria-describedby="usernameHelp" value="" required>
-                    <div id="usernameHelp" class="form-text">Enter your username here</div>
-                </div><br>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="text" class="form-control bg-transparent text-dark" id="password" name="password" aria-describedby="passwordHelp" value="" required>
-                    <div id="passwordHelp" class="form-text">Enter your password here</div>
-                </div><br>
-                <button type="submit" class="btn" id="loginbutton">LOGIN</button><br>
-            </form>
-            <p>create a new account<a href="/signup">here</a></p>
+            <div class="card" id="createform">
+                <div class="card-body flex-column d-flex align-items-center">
+                    <form action="#" method="POST">
+                        <br>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control bg-transparent text-dark" id="username" name="username" aria-describedby="usernameHelp" value="" required>
+                            <div id="usernameHelp" class="form-text">Enter your username here</div>
+                        </div><br>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="text" class="form-control bg-transparent text-dark" id="password" name="password" aria-describedby="passwordHelp" value="" required>
+                            <div id="passwordHelp" class="form-text">Enter your password here</div>
+                        </div><br>
+                        <div class="flex-column d-flex align-items-center">
+                            <button type="submit" class="btn" id="loginbutton">LOGIN</button><br>
+                        </div>
+                    </form><br>
+                    <p>create a new account <a href="/signup"><i class="bi bi-person-plus-fill"></i></a></p>
+                </div>
+                <div class="d-flex justify-content-evenly">
+                    <p><i class="bi bi-google"></i></p>
+                    <p><i class="bi bi-facebook"></i></p>
+                    <p><i class="bi bi-github"></i></p>
+                </div>
+                <br>
+            </div>
         </div>
     </div>
 {{/partial}}
