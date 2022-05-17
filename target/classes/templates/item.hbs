@@ -1,16 +1,41 @@
-<div class="container details">
-    <div class="card flex-row"><img class="card-img-left example-card-img-responsive" src="./images/sofa-gba054b8df_640.jpg"/>
-        <div class="card-body">
-            <h3 class="card-title">Couch</h3>
-            <p>Round single sofa with solid Fabric and is entirely in one color and has no pattern, design or writing on it. This design consists of grey textured fabric.</p>
-            <p>Seller: ABC furniture</p>
-            <p>Price: Kshs 300</p>
-            <p>13 bids</p>
-            <div class="quantity">
-                Quantity: <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+{{#partial "content"}}
+    <div class="container">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Check details
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="exampleModalLabel">Couch</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card flex-row"><img class="card-img-left example-card-img-responsive" width="50%" src="./images/sofa-gba054b8df_640.jpg" />
+                            <div class="card-body">
+                                <div card text>
+                                    <p>Round single sofa with solid Fabric and is entirely in one color. This design consists of grey textured fabric.</p>
+                                    <p>Seller: ABC furnitures</p>
+                                    <p>Price: Kshs 300</p>
+                                    <p>13 bids</p>
+                                    <div class="quantity">
+                                        Quantity: <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                                    </div>
+                                    <br><br>
+                                    <button type="button" class="btn btn-dark">Place bid</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
-            <br><br>
-            <button type="button" class="btn btn-dark">Place bid</button>
         </div>
     </div>
-</div>
+{{/partial}}
+{{> layout.hbs}}
