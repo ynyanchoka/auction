@@ -1,6 +1,17 @@
 * {
   font-family: 'Roboto Flex', sans-serif;
 }
+#back1col1 {
+	background: #363062;
+	width: 35%;
+  height: 900px;
+}
+
+#back1col2 {
+	background: #827397;
+	width: 65%;
+  height: 900px;
+}
 
 @media screen and (min-width: 750px)    {
 	#main {
@@ -8,17 +19,47 @@
 		width: 50%;
 		height: 750px;
 	}
+
+  #mainimg {
+    width: 356px;
+    height: 308px;
+    margin-top: 300px;
+    margin-left: 450px;
+  }
+
+  #createform {
+    margin-top: 100px;
+    opacity: 0.8;
+    position: absolute;
+    height: 700px;
+    width: 650px;
+    left: 20%;
+    right: 60%
+   }
 }
+
 @media screen and (max-width: 750px)    {
 	#main {
-  		background: linear-gradient(144.78deg, #827397 6.58%, #E9D5DA 48.67%, #827397 94.42%);
-  		width: 100%;
-  		height: 750px;
+  	background: linear-gradient(144.78deg, #827397 6.58%, #E9D5DA 48.67%, #827397 94.42%);
+  	width: 100%;
+  	height: 750px;
   	}
+
+  #mainimg {
+    display: none;
+    }
+	#createform {
+    margin-top: 100px;
+    opacity: 0.8;
+    position: absolute;
+    height: 700px;
+    width: 650px;
+    left: 5%;
+    }
 }
 
 .navbar {
-	background: #827397
+	background: #827397;
 }
 
 h1 {
@@ -30,23 +71,12 @@ h1 {
 	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#mainimg {
-	width: 356px;
-  height: 308px;
-  margin-top: 150px;
-  margin-left: 150px;
-}
-
-/*form {
-	margin-top: 50px;
-  margin-left: 150px;
-}*/
-
 #loginbutton {
 	width: 264px;
 	height: 64px;
-	background: linear-gradient(144.78deg, #827397 6.58%, #E9D5DA 48.67%, #827397 94.42%);
+	background: #363062;
 	border-radius: 25px;
+	color: white;
 }
 
 #username {
@@ -90,17 +120,14 @@ h1 {
 	height: 167px;
 	transform: rotate(-36.52deg);
 	background: #C4C4C4
-
 }
 
-#createform {
-  background: #E9D5DA;
+#createlink {
+	text-decoration: underline;
+	cursor: pointer;
 }
 
-.row {
-	background: #C4C4C4
+#back3 {
+position: absolute;
 }
 
-footer {
-		background: #C4C4C4
-}
