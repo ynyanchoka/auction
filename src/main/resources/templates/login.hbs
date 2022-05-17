@@ -26,7 +26,46 @@
                             <button type="submit" class="btn" id="loginbutton">LOGIN</button><br>
                         </div>
                     </form><br>
-                    <p>create a new account <a href="/signup"><i class="bi bi-person-plus-fill"></i></a></p>
+					<div>
+                        <p data-bs-toggle="modal" data-bs-target="#reg-modal">create a new account</p>
+					</div>
+					<div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title" id="modal-title">Create A New Account</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+                                    <div class="card" id="createform">
+                                        <div class="card-body flex-column d-flex align-items-center">
+                                            <form action="#" method="POST" >
+                                                <br>
+                                                <div class="mb-3">
+                                                    <label for="fullname" class="form-label">Full name</label>
+                                                    <input type="text" class="form-control bg-transparent text-dark" id="fullname" name="fullname" aria-describedby="fullnameHelp" value="" required>
+                                                    <div id="fullnameHelp" class="form-text">Enter your full name here</div>
+                                                </div><br>
+                                                <div class="mb-3">
+                                                    <label for="email" class="form-label">Email</label>
+                                                    <input type="email" class="form-control bg-transparent text-dark" id="email" name="email" aria-describedby="emailHelp" value="" required>
+                                                    <div id="emailHelp" class="form-text">Enter a valid email address here</div>
+                                                </div><br>
+                                                <div class="mb-3">
+                                                    <label for="password" class="form-label">Password</label>
+                                                    <input type="text" class="form-control bg-transparent text-dark" id="password" name="password" aria-describedby="passwordHelp" value="" required>
+                                                    <div id="passwordHelp" class="form-text">Set your password here</div>
+                                                </div><br>
+                                                <div class="flex-column d-flex align-items-center">
+                                                    <button type="submit" class="btn" id="loginbutton">CREATE ACCOUNT</button><br>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+						</div>
+					</div>
                 </div>
                 <div class="d-flex justify-content-evenly">
                     <p><i class="bi bi-google"></i></p>
@@ -37,6 +76,7 @@
             </div>
         </div>
     </div>
+
 {{/partial}}
 
 {{> layout.hbs}}
