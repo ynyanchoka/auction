@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;400&display=swap');
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Libre Franklin', sans-serif;
+}
+.nav-hr{
+  position: absolute;
+  width: 100%;
+  top: 45px;
+  color: white;
+}
+header img{
+  height: 90px;
+  position: relative;
+}
+
+nav{
+  position: absolute;
+  top: 23px;
+  right: 10%;
+  font-family: 'Libre Franklin', sans-serif;
+
+}
+nav>ul li{
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 1em;
+  cursor: pointer;
+  color: black;
+}
+nav>ul li:hover{
+background-color:#363062;
+color: white;
+}
+.container1{
+padding:10%;
+background-color:#E9D5DA;
+margin-left:3%;
+margin-right:3%;
+border-radius:12px;
+}
+#bid{
+background-color:#363062;
+color:white;
+}
+
