@@ -10,6 +10,8 @@ public interface IBid {
 
     List<Bids> getBidsByAuctionId(Connection connection, int id);
 
+    List<Bids> getBidsByUserId(Connection connection, int id);
+
     boolean updateBid(Connection connection, Bids bid);
 
     boolean deleteBid(Connection connection, int id);

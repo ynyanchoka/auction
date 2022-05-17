@@ -4,8 +4,6 @@ import java.sql.Timestamp;
 
 public class Bids {
     private int id;
-
-
     private int auctionItem;
     private String bidderName;
     private int bidAmount;
