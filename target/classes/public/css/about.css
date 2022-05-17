@@ -10,23 +10,18 @@
     padding-bottom:90px;
 
 }
-.container.story p{
-    font-size: 20px;
 
-}
 .container.authenticity{
     text-align: center;
     margin-top: 80px;
 
 }
-.about.about p{
-    font-size: 20px;
-}
-.container-fluid.mission p{
-    font-size: 20px;
+.container-fluid{
+    margin-right:0;
+    margin-left:0;
 
 }
-.container.authenticity p{
-    font-size: 20px;
 
+.btn{
+    background-color:#827397;
 }
