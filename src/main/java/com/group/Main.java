@@ -24,5 +24,13 @@ public class Main {
         get("/signup", (request, response) -> {
             return new ModelAndView(model, "signup.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/profile/", (request, response) -> {
+            return new ModelAndView(model, "profile.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/profiledetails", (request, response) -> {
+            return new ModelAndView(model, "profdetails.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
