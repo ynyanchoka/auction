@@ -1,0 +1,32 @@
+.container.story{
+    text-align: center;
+    margin-top: 90px;
+}
+.mission{
+    text-align: center;
+    margin-top: 120px;
+    background-color: #827397;
+    padding-top: 90px;
+    padding-bottom:90px;
+
+}
+.container.story p{
+    font-size: 20px;
+
+}
+.container.authenticity{
+    text-align: center;
+    margin-top: 80px;
+
+}
+.about.about p{
+    font-size: 20px;
+}
+.container-fluid.mission p{
+    font-size: 20px;
+
+}
+.container.authenticity p{
+    font-size: 20px;
+
+}
