@@ -7,7 +7,7 @@ public class Seeder {
         try {
             String bids = "CREATE TABLE IF NOT EXISTS bids(id SERIAL PRIMARY KEY, " +
                     "auctionitem INTEGER, biddername TEXT, " +
-                    "bidamount INTEGER, biddate TIMESTAMP default CURRENT_TIMESTAMP, status BOOLEAN)";
+                    "userid INTEGER, bidamount INTEGER, biddate TIMESTAMP default CURRENT_TIMESTAMP, status BOOLEAN)";
 
             String users = "CREATE TABLE IF NOT EXISTS users(id SERIAL PRIMARY KEY, " +
                     "email VARCHAR(255), fullname TEXT, password VARCHAR(255))";
@@ -28,9 +28,9 @@ public class Seeder {
 
     public static void drop(Connection connection) {
         try {
-            connection.createQuery("DROP TABLE users; " +
-                    "DROP TABLE auctions; " +
-                    "DROP TABLE bids");
+            connection.createQuery("DROP TABLE users").executeUpdate();
+            connection.createQuery("DROP TABLE auctions").executeUpdate();
+            connection.createQuery("DROP TABLE bids").executeUpdate();
         } catch (Exception exc) {
             throw new RuntimeException("Couldnt Drop the tables", exc);
         }

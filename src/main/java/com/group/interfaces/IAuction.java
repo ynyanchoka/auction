@@ -1,18 +1,18 @@
 package com.group.interfaces;
 
-import com.group.models.AuctionItem;
+import com.group.models.Auctions;
 import org.sql2o.Connection;
 
 import java.util.List;
 
 public interface IAuction {
-    AuctionItem createItem(Connection connection, AuctionItem auctionItem);
+    boolean createItem(Connection connection, Auctions auctions);
 
-    List<AuctionItem> getAllItems(Connection connection);
+    List<Auctions> getAllItems(Connection connection);
 
-    List<AuctionItem> getUsersAuctionItems(Connection connection, int id);
+    List<Auctions> getUsersAuctionItems(Connection connection, int id);
 
-    AuctionItem getItemById(Connection connection, int id);
+    Auctions getItemById(Connection connection, int id);
 
     boolean deleteAuctionItem(Connection connection, int id);
 

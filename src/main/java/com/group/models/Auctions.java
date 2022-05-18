@@ -2,7 +2,7 @@ package com.group.models;
 
 import java.sql.Timestamp;
 
-public class AuctionItem {
+public class Auctions {
 
     private int id;
     private int createdBy;
@@ -12,8 +12,8 @@ public class AuctionItem {
     private String description;
     private Timestamp createdAt;
 
-    public AuctionItem(int createdBy, String itemName, String imageUrl,
-                       int basePrice, String description
+    public Auctions(int createdBy, String itemName, String imageUrl,
+                    int basePrice, String description
                       ) {
         this.createdBy = createdBy;
         this.itemName = itemName;

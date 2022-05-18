@@ -4,7 +4,7 @@ import com.group.models.Users;
 import org.sql2o.Connection;
 
 public interface IUser {
-    Users createUser(Connection connection, Users user);
+    boolean createUser(Connection connection, Users user);
 
     Users loginUser(Connection connection, String email, String password);
 

@@ -11,13 +11,14 @@ public class UserDao implements IUser {
      * @return
      */
     @Override
-    public Users createUser(Connection connection, Users user) {
+    public boolean createUser(Connection connection, Users user) {
         try {
             String query = "INSERT INTO users(email, fullname, password)" +
                     "VALUES(:email, :fullName, :password)";
             return connection.createQuery(query)
                     .bind(user)
-                    .executeAndFetchFirst(Users.class);
+                    .executeUpdate()
+                    .getResult() > 0;
         } catch (Exception exc) {
             throw new RuntimeException("Error Encountered", exc);
         }
