@@ -12,7 +12,6 @@ import org.sql2o.Connection;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
-import javax.servlet.MultipartConfigElement;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +29,7 @@ public class Router extends RouterUtil {
             List<Auctions> auctions = auctionDao.getAllItems(connection);
             Map<String, Object> model = new HashMap<>();
             model.put("auctions", auctions);
+            System.out.println(model);
             return new ModelAndView(auctions, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -138,16 +138,12 @@ public class Router extends RouterUtil {
 
         post("/auction", (req, res) -> {
             checkLogin(req, res);
-            req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/temp"));
             Users user = Users.getCurrentUser();
-            String title = req.raw().getParameter("title");
-            System.out.println(req.raw().getQueryString());
-            System.out.println(title);
-            String description = req.raw().getParameter("description");
-            int startingBid = Integer.parseInt(req.raw().getParameter("price"));
-
+            String title = req.queryParams("name");
+            String description = req.queryParams("description");
+            int startingBid = Integer.parseInt(req.queryParams("price"));
             //Upload image
-            String url = uploadFile(req);
+            String url = "https://picsum.photos/200/300";
             Auctions auction = new Auctions(user.getId(), title, url, startingBid, description);
             new AuctionDao().createItem(connection, auction);
             res.redirect("/");
