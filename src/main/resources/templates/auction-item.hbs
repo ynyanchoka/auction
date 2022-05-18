@@ -19,9 +19,43 @@
                                 <p>Price: Kshs 4000</p>
                                 <p>12 bids</p>
                                 <div class="quantity">
-                                     <input class="form-control" data-inputmask="'alias': 'currency'" style="text-align: right;">
+                                    <input class="form-control" data-inputmask="'alias': 'currency'"
+                                           style="text-align: right;">
                                 </div>
-                                <br><br>
+                                <div class="table">
+                                    <table class="table table-striped table-bordered table-hover mt-3">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Bidder Name</th>
+                                            <th scope="col">Bid Amount</th>
+                                            {{#if isMe}}
+                                                <th scope="col">Actions</th>
+                                            {{/if}}
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {{#each bid}}
+                                            <tr>
+
+                                                <td>{{id}}</td>
+                                                <td>{{bidderName}}</td>
+                                                <td>Ksh {{bidAmount}}</td>
+                                                {{#if isMe}}
+                                                    <td>
+                                                        <a href="#" class="btn btn-outline-primary"
+                                                           onclick="approveBid('/auction/{{auctionItem}}/bid/{{id}}')">
+                                                            Approve
+                                                        </a>
+                                                    </td>
+                                                {{/if}}
+                                            </tr>
+
+                                        {{/each}}
+
+                                        </tbody>
+                                    </table>
+                                </div>
                                 <button type="button" class="btn btn-outline-dark">Place bid</button>
                             </div>
                         </div>

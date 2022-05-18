@@ -12,7 +12,10 @@ import org.sql2o.Connection;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import javax.servlet.MultipartConfigElement;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static spark.Spark.*;
 import static spark.SparkBase.staticFileLocation;
@@ -25,6 +28,8 @@ public class Router extends RouterUtil {
             checkLogin(req, res);
             IAuction auctionDao = new AuctionDao();
             List<Auctions> auctions = auctionDao.getAllItems(connection);
+            Map<String, Object> model = new HashMap<>();
+            model.put("auctions", auctions);
             return new ModelAndView(auctions, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -46,16 +51,34 @@ public class Router extends RouterUtil {
         get("/profile", (req, res) -> {
             checkLogin(req, res);
             Users user = req.session().attribute("user");
-            return new ModelAndView(null, "profile.hbs");
+
+            IAuction aucionDao = new AuctionDao();
+            List<Auctions> auctions = aucionDao.getUsersAuctionItems(connection, user.getId());
+            Map<String, Object> model = new HashMap<>();
+            model.put("auctions", auctions);
+            model.put("user", user);
+
+            return new ModelAndView(model, "profile.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/auction/:id", (req, res) -> {
-            //  checkLogin(req, res);
+            checkLogin(req, res);
             IAuction auctionDao = new AuctionDao();
             IBid bidDao = new BidDao();
             Auctions auction = auctionDao.getItemById(connection, Integer.parseInt(req.params("id")));
             List<Bids> bids = bidDao.getBidsByAuctionId(connection, Integer.parseInt(req.params("id")));
+
+            Map<String, Object> map = new HashMap<>();
+            boolean isMe = auction.getCreatedBy() == Users.getCurrentUser().getId();
+            map.put("auction", auction);
+            map.put("bids", bids);
+            map.put("isMe", isMe);
+
             return new ModelAndView(null, "auction-item.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/about", (req, res) -> {
+            return new ModelAndView(null, "about.hbs");
         }, new HandlebarsTemplateEngine());
 
         post("/auction/:id/bid", (req, res) -> {
@@ -95,9 +118,9 @@ public class Router extends RouterUtil {
             String fullName = req.queryParams("fullName");
             String email = req.queryParams("email");
             String password = req.queryParams("password");
-            Users user = new Users(fullName, email, password);
+            Users user = new Users(email, fullName, password);
             new UserDao().createUser(connection, user);
-            return new ModelAndView(null, "index.hbs");
+            return new ModelAndView(null, "login.hbs");
         }, new HandlebarsTemplateEngine());
 
         post("/login", (req, res) -> {
@@ -115,10 +138,14 @@ public class Router extends RouterUtil {
 
         post("/auction", (req, res) -> {
             checkLogin(req, res);
+            req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/temp"));
             Users user = Users.getCurrentUser();
-            String title = req.queryParams("title");
-            String description = req.queryParams("description");
-            int startingBid = Integer.parseInt(req.queryParams("startingBid"));
+            String title = req.raw().getParameter("title");
+            System.out.println(req.raw().getQueryString());
+            System.out.println(title);
+            String description = req.raw().getParameter("description");
+            int startingBid = Integer.parseInt(req.raw().getParameter("price"));
+
             //Upload image
             String url = uploadFile(req);
             Auctions auction = new Auctions(user.getId(), title, url, startingBid, description);

@@ -1,12 +1,54 @@
 {{#partial "content"}}
-    <div class="auction">
-        <button type="button"
-                onclick="window.location.assign('/auction/1')"
-                class="btn" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-            View details
-        </button>
+    <header>
+        <nav class="navbar d-flex w-100 justify-content-between align-items-center h-5">
+            <div class="brand">
+                Auction
+            </div>
+            <div class="nav-links w-5 h-5">
+                <a href="/logout" class="nav-link text-dark">Logout</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container h-100">
+        <div class="jumbotron h-20 d-flex justify-content-center align-items-center">
+            <div class="d-block">
+                <h4 class="text-bold">Welcome to Auction</h4>
+                <div class="text-mute">Some random description here</div>
+            </div>
+        </div>
+        <div class="row mt-3">
+           {{#if auctions}}
+                {{#each auctions}}
+                    <div class="col-md-3">
+                        <div class="card h-100 ">
+                            <img src="{{imageUrl}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{itemName}}</h5>
+                                <p class="card-text">{{description}}</p>
+                                <button type="button" id="bid"
+                                        class="btn btn-dark" onclick="openUrl('/auction/1{{id}}')">
+                                    View details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+           {{else}}
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">No auctions found</h5>
+                            <p class="card-text">
+                                Go to your <a href="/profile" class="nav-link">profile</a> to create one
+                            </p>
+                        </div>
+                    </div>
+                </div>
+           {{/if}}
+
+        </div>
     </div>
+
     {{#block "modal"}}
 
     {{/block}}

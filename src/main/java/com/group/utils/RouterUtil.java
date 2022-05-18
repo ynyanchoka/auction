@@ -24,8 +24,7 @@ public class RouterUtil {
 
     protected static String uploadFile(Request req) {
         try {
-            req.attribute("org.eclipse.jetty.multipartConfig", new MultipartConfigElement("/temp"));
-            Part filePart = req.raw().getPart("file");
+            Part filePart = req.raw().getPart("image");
             InputStream inputStream = filePart.getInputStream();
             OutputStream outputStream = new java.io.FileOutputStream("/temp/" + filePart.getName());
             IOUtils.copy(inputStream, outputStream);
