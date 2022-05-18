@@ -4,16 +4,17 @@
             <div class="brand">
                 Auction
             </div>
-            <div class="nav-links w-5 h-5">
+            <div class="nav-links d-flex w-5">
                 <a href="/logout" class="nav-link text-dark">Logout</a>
+                <a href="/profile" class="nav-link text-dark">Profile</a>
             </div>
         </nav>
     </header>
     <div class="container h-100">
         <div class="jumbotron h-20 d-flex justify-content-center align-items-center">
             <div class="d-block">
-                <h4 class="text-bold">Welcome to Auction</h4>
-                <div class="text-mute">Some random description here</div>
+                <h4 class="text-bold text-white">Welcome to Auction Center</h4><br>
+                <div class="text-mute text-white text-center">Bid your way to the top</div>
             </div>
         </div>
         <div class="row mt-3">
@@ -21,12 +22,12 @@
                 {{#each auctions}}
                     <div class="col-md-3">
                         <div class="card h-100 ">
-                            <img src="{{imageUrl}}" class="card-img-top" alt="...">
+                            <img src="{{imageUrl}}" class="card-img-top img-fluid" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{itemName}}</h5>
                                 <p class="card-text">{{description}}</p>
                                 <button type="button" id="bid"
-                                        class="btn btn-dark" onclick="openUrl('/auction/1{{id}}')">
+                                        class="btn btn-dark" onclick="openUrl('/auction/{{id}}')">
                                     View details
                                 </button>
                             </div>

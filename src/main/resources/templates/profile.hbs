@@ -11,7 +11,13 @@
                 </div>
             </div>
             <div class="body h-75 d-flex mt-5 flex-column  justify-content-between">
+                <div class="footer d-flex justify-content-center mb-3 ">
+                    <a href="/">
+                        <i class="fa fa-shop"></i>
+                        Auction
+                    </a>
 
+                </div>
                 <div class="footer d-flex justify-content-center mb-3 ">
                     <a href="/logout">
                         <img height="30" src="https://img.icons8.com/ios/50/000000/exit.png"/>
@@ -29,7 +35,7 @@
 
                 <div class="heading mb-4">
                     <h2>Auction Dashboard</h2>
-                    <p>Hello Doe</p>
+                    <p>Hello {{user.fullName}}</p>
                 </div>
                 <div class="nav-btn">
                     <img class="mx-3"
@@ -109,7 +115,6 @@
 
     </div>
 
-
     <!--Modal -->
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -131,8 +136,7 @@
                         </div>
                         <div class="form-group ">
                             <label class="form-check-label" for="description">Description</label>
-                            <textarea rows="10" class="form-control" id="desc" name="description">
-                            </textarea>
+                            <textarea rows="10" class="form-control" id="desc" name="description"></textarea>
 
                         </div>
 

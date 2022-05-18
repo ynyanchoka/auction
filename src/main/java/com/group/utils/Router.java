@@ -28,9 +28,9 @@ public class Router extends RouterUtil {
             IAuction auctionDao = new AuctionDao();
             List<Auctions> auctions = auctionDao.getAllItems(connection);
             Map<String, Object> model = new HashMap<>();
+
             model.put("auctions", auctions);
-            System.out.println(model);
-            return new ModelAndView(auctions, "index.hbs");
+            return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/login", (req, res) -> {
@@ -52,8 +52,8 @@ public class Router extends RouterUtil {
             checkLogin(req, res);
             Users user = req.session().attribute("user");
 
-            IAuction aucionDao = new AuctionDao();
-            List<Auctions> auctions = aucionDao.getUsersAuctionItems(connection, user.getId());
+            IAuction auctionDao = new AuctionDao();
+            List<Auctions> auctions = auctionDao.getUsersAuctionItems(connection, user.getId());
             Map<String, Object> model = new HashMap<>();
             model.put("auctions", auctions);
             model.put("user", user);
@@ -65,16 +65,19 @@ public class Router extends RouterUtil {
             checkLogin(req, res);
             IAuction auctionDao = new AuctionDao();
             IBid bidDao = new BidDao();
+            List<Auctions> allAuctions = auctionDao.getAllItems(connection);
             Auctions auction = auctionDao.getItemById(connection, Integer.parseInt(req.params("id")));
             List<Bids> bids = bidDao.getBidsByAuctionId(connection, Integer.parseInt(req.params("id")));
-
-            Map<String, Object> map = new HashMap<>();
+            Map<String, Object> model = new HashMap<>();
+            System.out.println(bids.size());
             boolean isMe = auction.getCreatedBy() == Users.getCurrentUser().getId();
-            map.put("auction", auction);
-            map.put("bids", bids);
-            map.put("isMe", isMe);
+            model.put("auction", auction);
+            model.put("auctions", allAuctions);
+            model.put("bids", bids);
+            model.put("isMe", isMe);
+            model.put("bidCount", bids.size());
 
-            return new ModelAndView(null, "auction-item.hbs");
+            return new ModelAndView(model, "auction-item.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/about", (req, res) -> {
@@ -86,7 +89,7 @@ public class Router extends RouterUtil {
             Users user = Users.getCurrentUser();
             int auctionId = Integer.parseInt(req.params("id"));
             // Get Bid amount
-            int amount = Integer.parseInt(req.queryParams("amount"));
+            int amount = Integer.parseInt(req.queryParams("bidAmount"));
             Bids bid = new Bids(user.getId(), user.getFullName(), auctionId, amount, false);
             new BidDao().createBid(connection, bid);
             res.redirect("/auction/" + auctionId);

@@ -10,6 +10,7 @@ const openUrl = (url) => {
 }
 
 const approveBid = (url) => {
+    console.log(url);
     fetch(url, {
         method: 'PATCH',
         headers: {
