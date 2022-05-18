@@ -1,0 +1,15 @@
+{{#partial "content"}}
+    <div class="auction">
+        <button type="button"
+                onclick="window.location.assign('/auction/1')"
+                class="btn" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+            View details
+        </button>
+    </div>
+    {{#block "modal"}}
+
+    {{/block}}
+{{/partial}}
+
+{{> layout.hbs}}

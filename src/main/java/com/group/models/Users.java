@@ -8,6 +8,8 @@ public class Users {
     private String fullName;
     private String password;
 
+    private static Users currentUser;
+
     public  Users(String email,String fullName, String password){
         this.email = email;
         this.fullName = fullName;
@@ -32,5 +34,13 @@ public class Users {
 
     public String getPassword() {
         return password;
+    }
+
+    public static Users getCurrentUser() {
+        return currentUser;
+    }
+
+    public static void setCurrentUser(Users cs) {
+        currentUser = cs;
     }
 }

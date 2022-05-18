@@ -1,0 +1,38 @@
+{{#partial "modal"}}
+    <div class="modal fade" id="modalView" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">Georgian Eye Art</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card flex-row">
+                        <img class="card-img-left example-card-img-responsive"
+                             width="50%"
+                             src="./images/art.webp"/>
+                        <div class="card-body">
+                            <div class="">
+                                <p>Colourful piece of art.The painting celebrates and commemorates love at a time when
+                                    Georgian courtship was difficult, which limited public romantic gestures</p>
+                                <p>Seller: Artsy</p>
+                                <p>Price: Kshs 4000</p>
+                                <p>12 bids</p>
+                                <div class="quantity">
+                                     <input class="form-control" data-inputmask="'alias': 'currency'" style="text-align: right;">
+                                </div>
+                                <br><br>
+                                <button type="button" class="btn btn-outline-dark">Place bid</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn " data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{/partial}}
+{{> index.hbs}}
