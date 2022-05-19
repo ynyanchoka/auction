@@ -1,0 +1,148 @@
+/*Import Font Nunito*/
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+/*Import FontAwesome*/
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#back1col1 {
+	background: #D8D2CB;
+	width: 35%;
+  height: 900px;
+}
+
+#back1col2 {
+	background: #827397;
+	width: 65%;
+  height: 900px;
+}
+
+@media screen and (min-width: 750px)    {
+	#main {
+		background: linear-gradient(144.78deg, #827397 6.58%, #E9D5DA 48.67%, #827397 94.42%);
+		width: 50%;
+		height: 750px;
+	}
+
+  #mainimg {
+    width: 356px;
+    height: 308px;
+    margin-top: 300px;
+    margin-left: 450px;
+  }
+
+  #createform {
+    margin-top: 100px;
+    opacity: 0.8;
+    position: absolute;
+    height: 700px;
+    width: 650px;
+    left: 30%;
+    right: 60%
+   }
+
+   #avatarimg {
+   	width: 100%;
+   	height: 750px;
+   }
+}
+
+@media screen and (max-width: 750px)    {
+	#main {
+  	background: linear-gradient(144.78deg, #827397 6.58%, #E9D5DA 48.67%, #827397 94.42%);
+  	width: 100%;
+  	height: 750px;
+  	}
+
+  #mainimg {
+    display: none;
+    }
+	#createform {
+    margin-top: 100px;
+    opacity: 0.8;
+    position: absolute;
+    height: 700px;
+    width: 650px;
+    left: 5%;
+    }
+
+  #avatarimg {
+    width: 150px;
+    height: 150px;
+		border-radius: 50%;
+    }
+}
+
+.navbar {
+	background: #827397;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 50px;
+	line-height: 116px;
+	align-items: center;
+	text-align: center;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#loginbutton {
+	width: 264px;
+	height: 64px;
+	background: #363062;
+	border-radius: 25px;
+	color: white;
+}
+
+#username {
+	box-sizing: border-box;
+	width: 350px;
+	height: 50px;
+	background: #FDFDFD;
+	border: 1px solid #000000;
+	border-radius: 25px;
+}
+
+#fullname {
+	box-sizing: border-box;
+	width: 350px;
+	height: 50px;
+	background: #FDFDFD;
+	border: 1px solid #000000;
+	border-radius: 25px;
+}
+
+#password {
+	box-sizing: border-box;
+	width: 350px;
+	height: 50px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	border-radius: 25px;
+}
+
+#email {
+	box-sizing: border-box;
+	width: 350px;
+	height: 50px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	border-radius: 25px;
+}
+
+#createlink {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#profpage {
+	background: linear-gradient(180deg, #E9D5DA 0%, rgba(130, 115, 151, 0.53) 100%);
+}
+
+#editprof {
+		background: linear-gradient(180deg, #E9D5DA 0%, rgba(130, 115, 151, 0.53) 100%);
+}
+
+#editprofile {
+	margin: 100px;
+	height: 400px;
+	width: 80%;
+
+}

@@ -1,0 +1,46 @@
+{{#partial "content"}}
+    <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="card w-30">
+            <div class="card-body">
+                <div class="w-100 d-flex justify-content-center">
+                    <h4>Create Account</h4>
+                </div>
+                <hr>
+                <div class="card-body flex-column d-flex">
+                    <form action="/register" method="POST">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Full Name</label>
+                            <input type="text" class="form-control bg-transparent text-dark" id="username"
+                                   name="fullName" aria-describedby="usernameHelp" value="" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Email</label>
+                            <input type="text" class="form-control bg-transparent text-dark" id="username"
+                                   name="email" aria-describedby="usernameHelp" value="" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control bg-transparent text-dark" id="password"
+                                   name="password" aria-describedby="passwordHelp" value="" required>
+
+                        </div>
+                        <div class="flex-column d-flex align-items-center">
+                            <button type="submit" class="btn btn-dark" id="loginbutton">LOGIN</button>
+
+                        </div>
+                    </form>
+                    <br>
+                    <p>Already have an account?<a href="/login" class="no-decoration">Login</a></p>
+                </div>
+                <div class="d-flex justify-content-evenly">
+                    <p><i class="bi bi-google"></i></p>
+                    <p><i class="bi bi-facebook"></i></p>
+                    <p><i class="bi bi-github"></i></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{>layout.hbs}}

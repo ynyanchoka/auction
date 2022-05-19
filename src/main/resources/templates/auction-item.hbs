@@ -1,0 +1,78 @@
+{{#partial "modal"}}
+    <div class="modal fade" id="modalView" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">{{auction.itemName}}</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card flex-row">
+                        <img class="card-img-left example-card-img-responsive"
+                             width="50%"
+                             src="{{auction.imageUrl}}"/>
+                        <div class="card-body">
+                            <div class="">
+                                <p>{{auction.description}}</p>
+
+                                <p>Ksh {{auction.basePrice}}.00</p>
+                                <p>{{bidCount}} Bids</p>
+                                <form action="/auction/{{auction.id}}/bid" method="post">
+                                    <div class="form-group">
+                                        <label for="bidAmount">Bid Amount</label>
+                                        <input type="number" class="form-control" id="bidAmount" name="bidAmount"
+                                               placeholder="Enter bid amount" max="10000000" required>
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">Bid</button>
+                                </form>
+                                </div>
+                                <div class="table">
+                                    <table class="table table-striped table-bordered table-hover mt-3">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Bidder Name</th>
+                                            <th scope="col">Bid Amount</th>
+                                            {{#if isMe}}
+                                                <th scope="col">Actions</th>
+                                            {{/if}}
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {{#each bids}}
+                                            <tr>
+                                                <td>{{id}}</td>
+                                                <td class="{{status}}">{{bidderName}}</td>
+                                                <td>Ksh {{bidAmount}}</td>
+                                                {{#if isMe}}
+
+                                                    <td class="d-flex">
+                                                        <a href="#" class="btn btn-outline-primary"
+                                                           onclick="approveBid('/auction/{{auctionItem}}/bid/{{id}}')">
+                                                            Approve
+                                                        </a>
+<!--                                                        <a onclick="deleteAuctionItem('/auction/{{auctionItem}}/bid/{{id}}')" class="btn btn-outline-danger">Delete</a>-->
+                                                    </td>
+                                                {{/if}}
+                                            </tr>
+
+                                        {{/each}}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn " data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{/partial}}
+{{> index.hbs}}

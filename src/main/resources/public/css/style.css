@@ -1,0 +1,144 @@
+/*Import Font Nunito*/
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+/*Import FontAwesome*/
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    color: #000;
+    background-color: #fff;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+#bid {
+    background-color: #363062;
+    color: white;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.no-decoration {
+    text-decoration: none;
+    color: #777373;
+}
+
+.jumbotron {
+    padding: 4%;
+    background-color: #827397;
+    border-radius: 12px;
+
+}
+
+.h-20 {
+    height: 20% !important;
+
+}
+
+.avatar{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.brand{
+    font-size: 2em;
+    font-weight: bold;
+    color: #363062;
+}
+
+
+.left {
+    border-radius: 10px;
+    border-right: 6px #f7f6f7 solid;
+    background: #f8f8f8;
+}
+.header {
+    margin-bottom: 40px;
+}
+.logo {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.profile {
+    margin-top:30px ;
+    margin-bottom: 40px;
+}
+.avatar img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: aquamarine;
+}
+.profile .name {
+    font-weight: 600;
+    margin-top: 20px;
+}
+.profile .post {
+    font-weight: 300;
+    color: #b7b7b7;
+    font-size: 14px;
+}
+/* links */
+.links ul {
+    list-style: none;
+}
+.links ul li {
+    margin: 20px 0;
+    padding: 10px 0px;
+    width: 200px;
+    border-radius: 10px;
+}
+.links ul li:hover {
+    background-color: #06050a;
+    color: #f7f6f7;
+}
+.links ul li a {
+    text-decoration: none;
+    text-align: center;
+    color: #b7b7b7;
+}
+.links ul li a img {
+    margin-right: 20px;
+}
+/* footer */
+.footer a {
+    text-decoration: none;
+    text-align: center;
+    color: #b7b7b7;
+}
+
+.stats .one , .two , .three{
+    height: 200px;
+    border-radius: 10px;
+}
+/*about*/
+.container.story{
+    text-align: center;
+    margin-top: 50px;
+}
+.mission{
+    text-align: center;
+    margin-top: 100px;
+    background-color: #827397;
+    padding-top: 50px;
+    padding-bottom:40px;
+
+}
+
+.container.authenticity{
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.true{
+    color: #5aad5a;
+}
