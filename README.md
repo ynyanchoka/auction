@@ -17,7 +17,7 @@ This is an auction website where a user can bid and auction items.
 ## Project resources
 The following is a live-link to the project's site
 
-Link : `....`
+Link : `https://auction.soloo.me`
 
 
 ## Setup/Installation Requirements
