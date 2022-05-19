@@ -41,7 +41,7 @@ public class Router extends RouterUtil {
         }, new HandlebarsTemplateEngine());
 
         get("/register", (req, res) -> {
-            return new ModelAndView(null, "register.hbs");
+            return new ModelAndView(null, "login.hbs");/*edit*/
         }, new HandlebarsTemplateEngine());
 
         get("/logout", (req, res) -> {
