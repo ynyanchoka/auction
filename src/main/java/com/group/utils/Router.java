@@ -25,6 +25,7 @@ public class Router extends RouterUtil {
         staticFileLocation("/public");
         port(8085);
 
+
         get("/", (req, res) -> {
             checkLogin(req, res);
             IAuction auctionDao = new AuctionDao();
