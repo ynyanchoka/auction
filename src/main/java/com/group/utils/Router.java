@@ -22,6 +22,7 @@ import static spark.SparkBase.staticFileLocation;
 public class Router extends RouterUtil {
     public static void run(Connection connection) {
         staticFileLocation("/public");
+        port(8085);
 
         get("/", (req, res) -> {
             checkLogin(req, res);
