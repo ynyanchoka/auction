@@ -4,8 +4,8 @@
             <div class="header h-25">
                 <div class="profile mt-4 text-center">
                     <div class="avatar">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR86BZr6SF24D2-QMUH2beYXdF0yjPq-odTQQ&usqp=CAU"
-                             alt="">
+                        <img src="{{image}}"
+                             alt="{{user.fullName}}">
                     </div>
                     <p class="name">{{user.fullName}}</p>
                 </div>
@@ -97,7 +97,9 @@
                                 <td>{{itemName}}</td>
                                 <td>Ksh. {{basePrice}}</td>
                                 <td>
-                                    <button onclick="deleteItem('/auction/{{id}}')" class="btn btn-outline-danger">Delete</button>
+                                    <button onclick="deleteItem('/auction/{{id}}')" class="btn btn-outline-danger">
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                         {{/each}}

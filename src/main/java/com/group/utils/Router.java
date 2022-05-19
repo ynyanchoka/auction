@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.group.utils.MD5Util.md5Hex;
 import static spark.Spark.*;
 import static spark.SparkBase.staticFileLocation;
 
@@ -52,13 +53,13 @@ public class Router extends RouterUtil {
         get("/profile", (req, res) -> {
             checkLogin(req, res);
             Users user = req.session().attribute("user");
-
             IAuction auctionDao = new AuctionDao();
             List<Auctions> auctions = auctionDao.getUsersAuctionItems(connection, user.getId());
             Map<String, Object> model = new HashMap<>();
+            String hash = md5Hex(user.getEmail());
             model.put("auctions", auctions);
             model.put("user", user);
-
+            model.put("image", "https://www.gravatar.com/avatar/"+hash);
             return new ModelAndView(model, "profile.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -100,9 +101,9 @@ public class Router extends RouterUtil {
         patch("/auction/:id/bid/:bid", (req, res) -> {
             checkLogin(req, res);
             int bidId = Integer.parseInt(req.params("bid"));
-            System.out.println(bidId);
             new BidDao().updateBid(connection, bidId, true);
-            return new ModelAndView(null, "bid.hbs");
+            res.redirect("/auction/" + req.params("id"));
+            return null;
         });
 
         delete("/auction/:id/bid/:bid", (req, res) -> {

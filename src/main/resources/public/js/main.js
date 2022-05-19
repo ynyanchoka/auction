@@ -17,6 +17,7 @@ const approveBid = (url) => {
             'Content-Type': 'application/json'
         }
     }).then(res => console.log("Patched")).catch(error => console.error('Error:', error))
+    window.location.reload();
 }
 
 const deleteAuctionItem = (url) => {
