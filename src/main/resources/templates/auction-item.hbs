@@ -26,53 +26,61 @@
                                     <br>
                                     <button type="submit" class="btn btn-primary">Bid</button>
                                 </form>
-                                </div>
-                                <div class="table">
-                                    <table class="table table-striped table-bordered table-hover mt-3">
-                                        <thead>
+                            </div>
+                            <div class="table">
+                                <table class="table table-striped table-bordered table-hover mt-3">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Bidder Name</th>
+                                        <th scope="col">Bid Amount</th>
+                                        {{#if isMe}}
+                                            <th scope="col">Actions</th>
+                                        {{/if}}
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {{#each bids}}
                                         <tr>
-                                            <th scope="col">Id</th>
-                                            <th scope="col">Bidder Name</th>
-                                            <th scope="col">Bid Amount</th>
+                                            <td>{{id}}</td>
+                                            <td><span class="{{status}}">{{bidderName}}</span></td>
+                                            <td>Ksh {{bidAmount}}</td>
                                             {{#if isMe}}
-                                                <th scope="col">Actions</th>
-                                            {{/if}}
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {{#each bids}}
-                                            <tr>
-                                                <td>{{id}}</td>
-                                                <td class="{{status}}">{{bidderName}}</td>
-                                                <td>Ksh {{bidAmount}}</td>
-                                                {{#if isMe}}
 
-                                                    <td class="d-flex">
+                                                <td class="d-flex">
+                                                    {{#if status}}
+                                                        <a onclick="deleteAuctionItem('/auction/{{auctionItem}}/bid/{{id}}')"
+                                                           class="btn btn-outline-danger">Reject</a>
+                                                    {{else}}
                                                         <a href="#" class="btn btn-outline-primary"
                                                            onclick="approveBid('/auction/{{auctionItem}}/bid/{{id}}')">
-                                                            Approve
+                                                            Accept
                                                         </a>
-<!--                                                        <a onclick="deleteAuctionItem('/auction/{{auctionItem}}/bid/{{id}}')" class="btn btn-outline-danger">Delete</a>-->
-                                                    </td>
-                                                {{/if}}
-                                            </tr>
 
-                                        {{/each}}
+                                                    {{/if}}
 
-                                        </tbody>
-                                    </table>
-                                </div>
+                                                </td>
+                                            {{/if}}
+                                        </tr>
 
+                                    {{/each}}
+
+                                    </tbody>
+                                </table>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn " data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn " data-bs-dismiss="modal">Close</button>
                 </div>
+
             </div>
         </div>
+    </div>
     </div>
 
 {{/partial}}
