@@ -3,7 +3,7 @@
 /*Import FontAwesome*/
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 #back1col1 {
-	background: #363062;
+	background: #D8D2CB;
 	width: 35%;
   height: 900px;
 }
@@ -34,7 +34,7 @@
     position: absolute;
     height: 700px;
     width: 650px;
-    left: 20%;
+    left: 30%;
     right: 60%
    }
 

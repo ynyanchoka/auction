@@ -35,10 +35,12 @@ body {
     padding: 4%;
     background-color: #827397;
     border-radius: 12px;
+
 }
 
 .h-20 {
     height: 20% !important;
+
 }
 
 .avatar{
@@ -135,4 +137,8 @@ body {
     text-align: center;
     margin-top: 50px;
 
+}
+
+.true{
+    color: #5aad5a;
 }

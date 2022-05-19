@@ -11,7 +11,7 @@ public class DbImpl extends Db{
     public Connection connect() {
        try{
            String connectionString = "jdbc:postgresql://localhost:5432/auction";
-           return new Sql2o(connectionString, null, null).open();
+           return new Sql2o(connectionString, "bill", "<cocoginger45").open();
        }catch (Exception exc){
            throw new RuntimeException("Something happened", exc);
        }

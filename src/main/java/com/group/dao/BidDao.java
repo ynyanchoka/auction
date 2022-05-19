@@ -34,7 +34,7 @@ public class BidDao implements IBid {
     @Override
     public List<Bids> getBidsByAuctionId(Connection connection, int id) {
         try {
-            String query = "SELECT * FROM bids WHERE auctionitem = :id";
+            String query = "SELECT * FROM bids WHERE auctionitem = :id  ORDER BY status DESC";
             return connection.createQuery(query)
                     .addParameter("id", id)
                     .executeAndFetch(Bids.class);

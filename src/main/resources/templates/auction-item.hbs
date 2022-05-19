@@ -23,6 +23,7 @@
                                         <input type="number" class="form-control" id="bidAmount" name="bidAmount"
                                                placeholder="Enter bid amount" max="10000000" required>
                                     </div>
+                                    <br>
                                     <button type="submit" class="btn btn-primary">Bid</button>
                                 </form>
                                 </div>
@@ -42,14 +43,16 @@
                                         {{#each bids}}
                                             <tr>
                                                 <td>{{id}}</td>
-                                                <td>{{bidderName}}</td>
+                                                <td class="{{status}}">{{bidderName}}</td>
                                                 <td>Ksh {{bidAmount}}</td>
                                                 {{#if isMe}}
-                                                    <td>
+
+                                                    <td class="d-flex">
                                                         <a href="#" class="btn btn-outline-primary"
                                                            onclick="approveBid('/auction/{{auctionItem}}/bid/{{id}}')">
                                                             Approve
                                                         </a>
+<!--                                                        <a onclick="deleteAuctionItem('/auction/{{auctionItem}}/bid/{{id}}')" class="btn btn-outline-danger">Delete</a>-->
                                                     </td>
                                                 {{/if}}
                                             </tr>

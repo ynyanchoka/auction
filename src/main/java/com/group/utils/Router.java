@@ -99,6 +99,7 @@ public class Router extends RouterUtil {
         patch("/auction/:id/bid/:bid", (req, res) -> {
             checkLogin(req, res);
             int bidId = Integer.parseInt(req.params("bid"));
+            System.out.println(bidId);
             new BidDao().updateBid(connection, bidId, true);
             return new ModelAndView(null, "bid.hbs");
         });
@@ -107,14 +108,16 @@ public class Router extends RouterUtil {
             checkLogin(req, res);
             int bidId = Integer.parseInt(req.params("bid"));
             new BidDao().deleteBid(connection, bidId);
-            return new ModelAndView(null, "bids.hbs");
+            res.redirect("/auction/" + req.params("id"));
+            return null;
         }, new HandlebarsTemplateEngine());
 
         delete("/auction/:id/", (req, res) -> {
             checkLogin(req, res);
             int auctionId = Integer.parseInt(req.params("id"));
             new AuctionDao().deleteAuctionItem(connection, auctionId);
-            return new ModelAndView(null, "auction.hbs");
+            res.redirect("/profile");
+            return null;
         }, new HandlebarsTemplateEngine());
 
         post("/register", (req, res) -> {

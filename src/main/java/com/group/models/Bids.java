@@ -48,4 +48,8 @@ public class Bids {
     public boolean isStatus() {
         return status;
     }
+
+    public int getId() {
+        return id;
+    }
 }

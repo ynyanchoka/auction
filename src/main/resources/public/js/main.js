@@ -18,3 +18,13 @@ const approveBid = (url) => {
         }
     }).then(res => console.log("Patched")).catch(error => console.error('Error:', error))
 }
+
+const deleteAuctionItem = (url) => {
+    console.log(url);
+    fetch(url, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(res => console.log("Deleted")).catch(error => console.error('Error:', error))
+}
